@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmailAddressessTable extends Migration
+class CreateEmailAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,13 @@ class CreateEmailAddressessTable extends Migration
     {
         Schema::create('email_addresses', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('campaign_id')->unsigned();
+            $table->string('email');
+            $table->boolean('confirmed');
             $table->timestamps();
+
+            $table->index('campaign_id');
+            $table->unique('email');
         });
     }
 

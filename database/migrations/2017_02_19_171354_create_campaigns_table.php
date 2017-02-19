@@ -15,7 +15,11 @@ class CreateCampaignsTable extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('subdomain');
+            $table->string('name');
             $table->timestamps();
+
+            $table->index('subdomain');
         });
     }
 

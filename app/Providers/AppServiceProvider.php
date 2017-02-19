@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Campaign;
+use Route;
+use Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,9 +16,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);  // Fix MariaDB default string length issue
+        Route::bind('campaign', function ($value) {
+            return Campaign::where('subdomain', $value)->first();
+        });
     }
-
     /**
      * Register any application services.
      *

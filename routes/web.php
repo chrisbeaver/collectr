@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['domain' => '{campaign}.'.env('APP_DOMAIN')], function() {
+	Route::get('/', 'CampaignController@showLandingPage');
 });
