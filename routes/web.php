@@ -13,4 +13,7 @@
 
 Route::group(['domain' => '{campaign}.'.env('APP_DOMAIN')], function() {
 	Route::get('/', 'CampaignController@showLandingPage');
+	Route::get('complete', 'CampaignController@showConfirmationPage');
+
+	Route::post('/', 'CampaignController@saveEmailAddress');
 });
