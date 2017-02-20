@@ -17,10 +17,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);  // Fix MariaDB default string length issue
-        
-        Route::bind('campaign', function ($value) {
-            return Campaign::where('subdomain', $value)->first();
-        });
     }
     /**
      * Register any application services.
