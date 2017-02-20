@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $campaign->name }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/bulma.css">
-    <link rel="stylesheet" type="text/css" href="../css/landing.css">
+    <link rel="stylesheet" type="text/css" href="{{ elixir('css/app.css') }}">
 </head>
 <body>
     <section class="hero is-fullheight is-dark">

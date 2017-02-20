@@ -25,6 +25,6 @@ class CampaignController extends Controller
     	$email = EmailAddress::create(['email' => $request->email,
     								   'campaign_id' => $campaign->id]);
     	
-    	return redirect()->action('CampaignController@showConfirmationPage', compact('email'));
+    	return redirect()->action('CampaignController@showConfirmationPage', compact('campaign','email'));
     }
 }
