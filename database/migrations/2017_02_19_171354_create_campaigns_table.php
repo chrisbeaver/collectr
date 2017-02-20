@@ -20,6 +20,7 @@ class CreateCampaignsTable extends Migration
             $table->timestamps();
 
             $table->index('subdomain');
+            $table->unique('subdomain');
         });
     }
 
